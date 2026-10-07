@@ -6,7 +6,11 @@ int main()
     int curr;
     int c = 0;
 
-    std::cin >> prev;
+    if (!(std::cin >> prev))
+    {
+        std::cerr << "Error: The input data cannot be identified as a sequence\n";
+        return 1;
+    }
 
     if (prev == 0)
     {
@@ -22,6 +26,13 @@ int main()
         }
         prev = curr;
     }
-    std::cout << c;
+
+    if (!std::cin.eof() && std::cin.fail())
+    {
+        std::cerr << "Error: The input data cannot be identified as a sequence\n";
+        return 1;
+    }
+
+    std::cout << c << "\n";
     return 0;
 } 
