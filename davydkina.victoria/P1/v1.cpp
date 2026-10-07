@@ -7,7 +7,7 @@ int main()
     int c = 0;
 
     std::cin >> prev;
-    while (std::cin >> curr)
+    while (std::cin >> curr && curr!=0)
     {
         if (curr > prev)
         {
